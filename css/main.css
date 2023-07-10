@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext");
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    -webkit-text-size-adjust: 100%;
+    font-variant-ligatures: none;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialised;
+    font-size: 100%;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    color: #1F1D42;
+    background-color: #180148;
+}
+
+.card-hover {
+    width: 360px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 32px -10px rgba(0, 0, 0, 0.08);
+}
+
+.card-hover-extra{
+    display: none;
+}
+
+.card-hover:has(.card-hover-link:hover) .card-hover-content {
+z-index: 2;
+}
+
+.card-hover:has(.card-hover-link:focus) .card-hover-content {
+    z-index: 2;
+    }
+    
+
+
+.card-hover:has(.card-hover-link:hover) .card-hover-extra {
+    z-index: 1;
+    color: rgba(0, 0, 0, 1);
+    background-color:#86B971;
+    position: absolute;
+    padding: 78px;
+    bottom: 0px;
+    transform: translateY(0);
+    transition: transform 0.35s;
+    display: block;
+    font-size: 1.5rem;
+    color:#DEE8C2;
+    text-align: center;
+   
+}
+
+/* .card-hover:has(.card-hover-link:focus) .card-hover-extra {
+    z-index: 1;
+    color: rgba(0, 0, 0, 1);
+    background-color:#86B971;
+    position: absolute;
+    padding: 78px;
+    bottom: 0px;
+    transform: translateY(0);
+    transition: transform 0.35s;
+    display: block;
+    font-size: 1.5rem;
+    color:#DEE8C2;
+    text-align: center;
+} */
+
+.card-hover:has(.card-hover-link:hover) .card-hover-extra span {
+    color:#2d7f0b !important;
+}
+
+/* 
+.card-hover:has(.card-hover-link:focus) .card-hover-extra span {
+    color:#2d7f0b !important;
+}
+ */
+
+.card-hover:hover .card-hover-content {
+    background-color: #DEE8C2;
+    bottom: 100%;
+    transform: translateY(100%);
+    padding: 24px 60px;
+    transition: all 0.35s cubic-bezier(0.1, 0.72, 0.4, 0.97);
+}
+
+.card-hover:hover .card-hover-link {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    transition: all 0.3s 0.35s cubic-bezier(0.1, 0.72, 0.4, 0.97);
+}
+
+.card-hover img {
+    
+    object-fit: cover;
+    width: inherit;
+    height: inherit;
+}
+
+
+
+.card-hover:hover img {
+
+    transform: scale(1);
+    transition: 0.35s 0.1s transform cubic-bezier(0.1, 0.72, 0.4, 0.97);
+}
+
+.card-hover-content {
+    width: 100%;
+    text-align: center;
+    background-color: #86B971;
+    padding: 0 60px 50px;
+    position: absolute;
+    bottom: 0;
+    /* top: 0; */
+    transform: translateY(0);
+    transition: all 0.35s 0.35s cubic-bezier(0.1, 0.72, 0.4, 0.97);
+    will-change: bottom, background-color, transform, padding;
+    z-index: 1;
+}
+
+.card-hover-content:before {
+    content: "";
+    width: 100%;
+    height: 120px;
+    background-color: inherit;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+
+.card-hover-content:after{
+    content: "";
+    width: 100%;
+    height: 100px;
+    background-color: inherit;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+
+.card-hover-content::before {
+    top: -80px;
+    clip-path: ellipse(60% 45% at 50% 50%);
+    /* -webkit-clip-path: ellipse (60% 80px at bottom center);
+            clip-path: ellipse(25% 45% at 50% 50%); */
+}
+
+.card-hover-content::after {
+    /* top: -80px; */
+    clip-path: ellipse(74% 45% at 50% 50%);
+    /* -webkit-clip-path: ellipse(60% 80px at top center);
+            clip-path: ellipse(60% 80px at top center); */
+}
+
+.card-hover-title {
+    font-size: 1.5rem;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.card-hover-title span {
+    color: #2d7f0b;
+}
+
+.card-hover-text {
+    font-size: 0.75rem;
+}
+
+.card-hover-link {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-decoration: none;
+    color: #2d7f0b;
+    opacity: 0;
+    padding: 10px;
+    transition: all 0.35s;
+    top:90%;
+    height: fit-content;
+}
+
+.card-hover-link:hover svg {
+    transform: translateX(4px);
+}
+
+.card-hover-link svg {
+    width: 18px;
+    margin-left: 4px;
+    transition: transform 0.3s;
+}
